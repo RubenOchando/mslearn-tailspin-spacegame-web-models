@@ -32,10 +32,16 @@ steps:
     arguments: '--no-build --configuration $(buildConfiguration)'
     versioningScheme: byPrereleaseNumber
     majorVersion: '1'
-    minorVersion: '0'
+    minorVersion: '1'
     patchVersion: '0'
+- task: NuGetToolInstaller@1
+  inputs:
+    versionSpec: 
+    checkLatest: true
 
-
+- task: NuGetAuthenticate@1
+  inputs:
+    nuGetServiceConnections: OtherOrganizationFeedConnection, ThirdPartyRepositoryConnection
 - task: UseDotNet@2 # Optional if the .NET Core SDK is already installed
 - script: dotnet restore
 # ...
