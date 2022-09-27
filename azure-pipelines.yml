@@ -38,9 +38,12 @@ steps:
   inputs:
     versionSpec: 
     checkLatest: true
-
-
-- task: UseDotNet@2 # Optional if the .NET Core SDK is already installed
+- task: UseDotNet@2
+  displayName: 'Use .NET Core sdk'
+  inputs:
+          packageType: sdk
+          version: 3.1.402
+          installationPath: $(Agent.ToolsDirectory)/dotnet
 - script: dotnet restore
 - script: dotnet pack
 - script: dotnet nuget list source
