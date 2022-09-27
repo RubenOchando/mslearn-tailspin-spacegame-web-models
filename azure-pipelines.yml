@@ -50,5 +50,5 @@ steps:
 - script: dotnet restore
 - script: dotnet pack
 # ...
-- script: dotnet nuget push --api-key TailSpinSpace --source https://pkgs.dev.azure.com/ptrohWEorg/35ab38f2-3c5e-4a29-8a3a-7a43feff507b/_packaging/TailspinSpaceGameWebModels/nuget/v2/index.json Tailspin.SpaceGame.Web.Models.1.1.0.nupkg
+#- script: dotnet nuget push --api-key TailSpinSpace --source https://pkgs.dev.azure.com/ptrohWEorg/35ab38f2-3c5e-4a29-8a3a-7a43feff507b/_packaging/TailspinSpaceGameWebModels/nuget/v2/index.json Tailspin.SpaceGame.Web.Models.1.1.0.nupkg
 
