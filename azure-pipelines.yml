@@ -46,7 +46,7 @@ steps:
           installationPath: $(Agent.ToolsDirectory)/dotnet
 - script: dotnet restore
 - script: dotnet pack
-- script: dotnet nuget add source https://pkgs.dev.azure.com/ptrohWEorg/35ab38f2-3c5e-4a29-8a3a-7a43feff507b/_packaging/TailspinSpaceGameWebModels/nuget/v3/index.json -n pkgs.dev.azure.com --username "ruocho" --password "ulzdrhp6jneenjuiyf3xxabv7wd4gtr4qzo7l3w6fg4chon35ghq"
+- script: dotnet nuget add source https://pkgs.dev.azure.com/ptrohWEorg/35ab38f2-3c5e-4a29-8a3a-7a43feff507b/_packaging/TailspinSpaceGameWebModels/nuget/v3/index.json --name pkgs.dev.azure.com --username "ruocho" --password "ulzdrhp6jneenjuiyf3xxabv7wd4gtr4qzo7l3w6fg4chon35ghq"
 - script: dotnet nuget list source
 - script: dotnet nuget push --source "pkgs.dev.azure.com" --api-key TailSpinSpace "/home/vsts/work/1/s/Tailspin.SpaceGame.Web.Models/bin/Debug/Tailspin.SpaceGame.Web.Models.1.1.0.nupkg"
 # ...
