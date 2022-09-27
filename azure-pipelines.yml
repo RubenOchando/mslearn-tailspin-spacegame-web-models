@@ -43,6 +43,7 @@ steps:
 - task: UseDotNet@2 # Optional if the .NET Core SDK is already installed
 - script: dotnet restore
 - script: dotnet pack
+- script: dotnet nuget list source
 - script: dotnet nuget push --source "TailspinSpaceGameWebModels" --api-key TailSpinSpace "/home/vsts/work/1/s/Tailspin.SpaceGame.Web.Models/bin/Debug/Tailspin.SpaceGame.Web.Models.1.1.0.nupkg"
 # ...
 
