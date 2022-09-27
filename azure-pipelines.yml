@@ -38,8 +38,6 @@ steps:
   inputs:
     versionSpec: 
     checkLatest: true
-
-
 - task: NuGetAuthenticate@1
   inputs:
     nuGetServiceConnections: OtherOrganizationFeedConnection, ThirdPartyRepositoryConnection
