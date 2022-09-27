@@ -39,11 +39,16 @@ steps:
     versionSpec: 
     checkLatest: true
 
-- task: NuGetAuthenticate@1
+- task: NuGetCommand@2
+  displayName: 'Publish NuGet package'
   inputs:
-    nuGetServiceConnections: OtherOrganizationFeedConnection, ThirdPartyRepositoryConnection
+    command: push
+    publishVstsFeed: 'TailspinSpaceGameWebModels'
+    allowPackageConflicts: true
+  condition: succeeded()
 - task: UseDotNet@2 # Optional if the .NET Core SDK is already installed
 - script: dotnet restore
+- script: dotnet pack
 # ...
-- script: dotnet nuget push --api-key AzureArtifacts --source https://pkgs.dev.azure.com/ptrohWEorg/35ab38f2-3c5e-4a29-8a3a-7a43feff507b/_packaging/TailspinSpaceGameWebModels/nuget/v3/index.json Tailspin.SpaceGame.Web.Models.1.0.0.nupkg
+- script: dotnet nuget push --api-key TailSpinSpace --source https://pkgs.dev.azure.com/ptrohWEorg/35ab38f2-3c5e-4a29-8a3a-7a43feff507b/_packaging/TailspinSpaceGameWebModels/nuget/v2/index.json Tailspin.SpaceGame.Web.Models.1.1.0.nupkg
 

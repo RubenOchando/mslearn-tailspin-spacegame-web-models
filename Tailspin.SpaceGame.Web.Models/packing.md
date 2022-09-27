@@ -25,3 +25,22 @@ Copy
 dotnet nuget add source https://pkgs.dev.azure.com/ptrohWEorg/35ab38f2-3c5e-4a29-8a3a-7a43feff507b/_packaging/TailspinSpaceGameWebModels/nuget/v3/index.json --api-key "ptaz400"
 
 dotnet nuget push --source "TailspinSpaceGameWebModels" --api-key TailSpinSpace "C:\LocalPackage\Tailspin.SpaceGame.Web.Models.1.0.0.nupkg" worked
+
+https://pkgs.dev.azure.com/ptrohWEorg/35ab38f2-3c5e-4a29-8a3a-7a43feff507b/_packaging/TailspinSpaceGameWebModels/nuget/v3/index.json.
+
+
+$ dotnet pack
+MSBuild version 17.3.1+2badb37d1 for .NET
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Tailspin.SpaceGame.Web.Models -> C:\Users\ruoch\Documents\PT\Project\Learning\az-400\code\Space Game\mslearn-tailspin-spacegame-web-models\Tailspin.SpaceGame.Web.Models\bin\Debug\netstandard2.0\Tailspin.SpaceGa
+  me.Web.Models.dll
+  Successfully created package 'C:\Users\ruoch\Documents\PT\Project\Learning\az-400\code\Space Game\mslearn-tailspin-spacegame-web-models\Tailspin.SpaceGame.Web.Models\bin\Debug\Tailspin.SpaceGame.Web.Models.1.0.
+  0.nupkg'.
+
+  
+$ dotnet nuget push --source "TailspinSpaceGameWebModels" --api-key TailSpinSpace "C:\LocalPackage\Tailspin.SpaceGame.Web.Models.1.0.0.nupkg"
+Pushing Tailspin.SpaceGame.Web.Models.1.0.0.nupkg to 'https://pkgs.dev.azure.com/ptrohWEorg/35ab38f2-3c5e-4a29-8a3a-7a43feff507b/_packaging/16363733-dc1f-4115-bffe-34c719827ae9/nuget/v2/'...
+  PUT https://pkgs.dev.azure.com/ptrohWEorg/35ab38f2-3c5e-4a29-8a3a-7a43feff507b/_packaging/16363733-dc1f-4115-bffe-34c719827ae9/nuget/v2/
+  Accepted https://pkgs.dev.azure.com/ptrohWEorg/35ab38f2-3c5e-4a29-8a3a-7a43feff507b/_packaging/16363733-dc1f-4115-bffe-34c719827ae9/nuget/v2/ 4075ms
+Your package was pushed.
