@@ -44,3 +44,13 @@ Pushing Tailspin.SpaceGame.Web.Models.1.0.0.nupkg to 'https://pkgs.dev.azure.com
   PUT https://pkgs.dev.azure.com/ptrohWEorg/35ab38f2-3c5e-4a29-8a3a-7a43feff507b/_packaging/16363733-dc1f-4115-bffe-34c719827ae9/nuget/v2/
   Accepted https://pkgs.dev.azure.com/ptrohWEorg/35ab38f2-3c5e-4a29-8a3a-7a43feff507b/_packaging/16363733-dc1f-4115-bffe-34c719827ae9/nuget/v2/ 4075ms
 Your package was pushed.
+
+
+
+pipeline rest
+- task: DotNetCoreCLI@2
+  displayName: 'Publish project'
+  inputs:
+      command: 'publish'
+      publishWebProjects: false
+      projects: '''**/*.csproj'''
