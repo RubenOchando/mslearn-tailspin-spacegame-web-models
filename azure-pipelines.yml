@@ -44,6 +44,13 @@ steps:
       patchVersion: '0'
 - task: NuGetAuthenticate@1
 - task: NuGetCommand@2
+  displayName: 'Publish NuGet package'
+  inputs:
+    command: push
+    feedPublish: '$(System.TeamProject)/35ab38f2-3c5e-4a29-8a3a-7a43feff507b'
+    allowPackageConflicts: true
+  condition: succeeded()
+- task: NuGetCommand@2
   inputs:
       command: 'push'
       packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
