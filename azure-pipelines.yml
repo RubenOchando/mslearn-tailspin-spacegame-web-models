@@ -42,6 +42,7 @@ steps:
       majorVersion: '1'
       minorVersion: '1'
       patchVersion: '0'
+- task: NuGetAuthenticate@1
 - task: NuGetCommand@2
   inputs:
       command: 'push'
