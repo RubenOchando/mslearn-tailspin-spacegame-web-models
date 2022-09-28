@@ -40,11 +40,7 @@ steps:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)'
       ArtifactName: 'TailspinSpaceGameWebModels'
       publishLocation: 'Container'
-- task: DotNetCoreCLI@2
-  inputs:
-          command: 'publish'
-          publishWebProjects: true
-          workingDirectory: '$(Build.ArtifactStagingDirectory)'
+
 - task: PowerShell@2
   displayName: List files Post publish
   inputs: 
