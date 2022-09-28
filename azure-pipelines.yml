@@ -48,6 +48,7 @@ steps:
       packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
       nuGetFeedType: 'internal'
       publishVstsFeed: '6c793268-2bd0-4dc9-9c24-170546276b82'
+      publishPackageMetadata: true
 - task: DotNetCoreCLI@2
   displayName: 'Publish project'
   inputs:
@@ -81,9 +82,6 @@ steps:
           packageType: sdk
           version: 3.1.402
           installationPath: $(Agent.ToolsDirectory)/dotnet
-
-- script: dotnet restore
-- script: dotnet pack
 - script: dotnet nuget add source "https://pkgs.dev.azure.com/ptrohWEorg/35ab38f2-3c5e-4a29-8a3a-7a43feff507b/_packaging/TailspinSpaceGameWebModels/nuget/v3/index.json" -n "TailspinSpaceGameWebModels" --username "ruben ochando"  --password "ulzdrhp6jneenjuiyf3xxabv7wd4gtr4qzo7l3w6fg4chon35ghq" --store-password-in-clear-text
 - script: dotnet nuget list source
 
