@@ -47,7 +47,7 @@ steps:
   displayName: List files Post publish
   inputs: 
     targetType: 'inline'
-    script: Get-ChildItem -Path $System.TeamProject
+    script: Get-ChildItem -Path $System.TeamProject -recurse
 
 - task: NuGetCommand@2
   displayName: 'Publish NuGet package'
