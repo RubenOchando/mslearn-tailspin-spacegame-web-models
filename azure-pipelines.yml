@@ -47,7 +47,7 @@ steps:
   displayName: 'Publish NuGet package'
   inputs:
     command: push
-    feedPublish: '$(System.TeamProject)/35ab38f2-3c5e-4a29-8a3a-7a43feff507b'
+    feedPublish: '$(System.TeamProject)/6c793268-2bd0-4dc9-9c24-170546276b82'
     allowPackageConflicts: true
   condition: succeeded()
 - task: NuGetCommand@2
