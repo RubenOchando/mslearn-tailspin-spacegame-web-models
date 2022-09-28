@@ -54,3 +54,10 @@ pipeline rest
       command: 'publish'
       publishWebProjects: false
       projects: '''**/*.csproj'''
+- task: DotNetCoreCLI@2
+  displayName: 'Push project'
+  inputs:    
+        command: 'push'
+        packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+        nuGetFeedType: 'internal'
+        publishVstsFeed: '6c793268-2bd0-4dc9-9c24-170546276b82'
