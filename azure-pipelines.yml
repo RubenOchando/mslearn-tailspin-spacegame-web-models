@@ -34,6 +34,18 @@ steps:
     majorVersion: '1'
     minorVersion: '1'
     patchVersion: '0'
+- task: DotNetCoreCLI@2
+  inputs:
+      command: 'publish'
+      publishWebProjects: true
+      workingDirectory: '$(Build.ArtifactStagingDirectory)'
+
+- task: DotNetCoreCLI@2
+  inputs:
+        command: 'push'
+        packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+        nuGetFeedType: 'internal'
+        publishVstsFeed: '6c793268-2bd0-4dc9-9c24-170546276b82'
 
 - task: PublishBuildArtifacts@1
   inputs:
@@ -45,7 +57,7 @@ steps:
   displayName: List files Post publish
   inputs: 
         targetType: 'inline'
-        script: 'Get-ChildItem'
+        script: Get-ChildItem -Path $(Agent.ToolsDirectory
 
 - task: NuGetToolInstaller@1
   inputs:
@@ -57,14 +69,10 @@ steps:
           packageType: sdk
           version: 3.1.402
           installationPath: $(Agent.ToolsDirectory)/dotnet
+
 - script: dotnet restore
 - script: dotnet pack
 - script: dotnet nuget add source "https://pkgs.dev.azure.com/ptrohWEorg/35ab38f2-3c5e-4a29-8a3a-7a43feff507b/_packaging/TailspinSpaceGameWebModels/nuget/v3/index.json" -n "TailspinSpaceGameWebModels" --username "ruben ochando"  --password "ulzdrhp6jneenjuiyf3xxabv7wd4gtr4qzo7l3w6fg4chon35ghq" --store-password-in-clear-text
 - script: dotnet nuget list source
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    nuGetFeedType: 'internal'
-    publishVstsFeed: '6c793268-2bd0-4dc9-9c24-170546276b82'
+
 
