@@ -43,6 +43,14 @@ steps:
       minorVersion: '1'
       patchVersion: '0'
 - task: NuGetAuthenticate@1
+- task: PowerShell@2
+  displayName: List files Post publish
+  inputs: 
+    targetType: 'inline'
+    script: |
+        Write-Host "System.TeamProject" -ForegroundColor Green
+        Get-ChildItem -Path $(System.TeamProject)'
+
 - task: NuGetCommand@2
   displayName: 'Publish NuGet package'
   inputs:
