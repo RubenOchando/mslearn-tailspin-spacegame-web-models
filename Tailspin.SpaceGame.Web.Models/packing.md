@@ -61,3 +61,5 @@ pipeline rest
         packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
         nuGetFeedType: 'internal'
         publishVstsFeed: '6c793268-2bd0-4dc9-9c24-170546276b82'
+
+        nuget.exe sources add -Name "TailspinSpaceGameWebModels" -Source "https://pkgs.dev.azure.com/ptrohWEorg/35ab38f2-3c5e-4a29-8a3a-7a43feff507b/_packaging/TailspinSpaceGameWebModels/nuget/v3/index.json" -username ruben ochando  -password ulzdrhp6jneenjuiyf3xxabv7wd4gtr4qzo7l3w6fg4chon35ghq
