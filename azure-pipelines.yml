@@ -37,8 +37,8 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
       command: 'publish'
-      publishWebProjects: true
-      workingDirectory: '$(Build.ArtifactStagingDirectory)'
+      publishWebProjects: false
+      projects: '''**/*.csproj'''
 
 - task: DotNetCoreCLI@2
   inputs:
