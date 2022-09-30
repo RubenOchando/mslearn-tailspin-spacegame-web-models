@@ -1,5 +1,5 @@
 Publish packages from external sources
-Create a personal access token (PAT ulzdrhp6jneenjuiyf3xxabv7wd4gtr4qzo7l3w6fg4chon35ghq ) with packaging read and write scope.
+Create a personal access token (PAT  ) with packaging read and write scope.
 
 Add your package source to your nuget.config file. This will add your PAT to your nuget.config file. Make sure to store this file in a safe place, and do not check this file into source control.
 
